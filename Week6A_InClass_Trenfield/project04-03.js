@@ -30,12 +30,10 @@ function updateCount() {
    let commentsText = document.getElementById("comment").value;
    let charCount = countCharacters(commentsText);
    try {
-      if (charCount>MAX_REVIEW){
-         throw("You have exceeded the character count limit");
-      }
+      if (charCount>MAX_REVIEW) throw "You have exceeded the character count limit";
    }
-   catch {
-      Message.innerHTML.warningBox = "Error"
+   catch (error){
+      warningBox.innerHTML = error
    }
    finally{
       wordCountBox.innerHTML = charCount;
